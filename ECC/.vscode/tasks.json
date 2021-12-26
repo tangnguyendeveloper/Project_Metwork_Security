@@ -1,0 +1,39 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe build active file",
+			"command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${file}",
+				"${workspaceFolder}\\my_util.hpp",
+            	"${workspaceFolder}\\my_util.cpp",
+				"${workspaceFolder}\\stdafx.hpp",
+				"${workspaceFolder}\\stdafx.cpp",
+				"${workspaceFolder}\\my_ecdsa.hpp",
+				"${workspaceFolder}\\my_ecdsa.cpp",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"-D_WIN32_WINNT=0x0501",
+                "-pthread",
+                "-L${workspaceFolder}\\lib",
+                "-l:libcryptopp.a",
+                "-Wall",
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+                "kind": "build",
+                "isDefault": true
+            },
+			"detail": "compiler: C:\\msys64\\mingw64\\bin\\g++.exe"
+		}
+	]
+}

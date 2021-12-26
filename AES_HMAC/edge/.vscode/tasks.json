@@ -1,0 +1,42 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++-10 build active file",
+			"command": "/usr/bin/g++-10",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g2",
+				"-O3",
+				"-DNDEBUG",
+				"${file}",
+				"${workspaceFolder}/aes_encrypt_decrypt.hpp",
+				"${workspaceFolder}/aes_encrypt_decrypt.cpp",
+				"${workspaceFolder}/my_util.hpp",
+				"${workspaceFolder}/my_util.cpp",
+				"${workspaceFolder}/ceSerial.h",
+				"${workspaceFolder}/ceSerial.cpp",
+				"${workspaceFolder}/TCPClient.hpp",
+				"${workspaceFolder}/TCPClient.cpp",
+				"${workspaceFolder}/TCPListener.hpp",
+				"${workspaceFolder}/TCPListener.cpp",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}",
+				"-pthread",
+				"-L${workspaceFolder}/lib",
+				"-l:libcryptopp.a",
+				"-I${workspaceFolder}/cryptopp",
+				"-Wall",
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: /usr/bin/g++-10"
+		}
+	]
+}
